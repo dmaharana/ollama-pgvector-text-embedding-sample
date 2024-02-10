@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  database:
+    image: "pgvector/pgvector:0.6.0-pg16"
+    container_name: "postgresql-pgvector-database"
+    ports:
+      - 54321:5432
+    env_file:
+      - .env
+    volumes:
+      - ./db-data-pgv/:/var/lib/postgresql/data/
